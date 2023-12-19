@@ -23,6 +23,13 @@
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lora:700italic' rel='stylesheet' type='text/css'>
 
+    <style>
+        #home .container {
+            background: #00000061;
+            padding: 80px;
+        }
+    </style>
+
 </head>
 
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
@@ -50,16 +57,17 @@
                     <span class="icon icon-bar"></span>
                     <span class="icon icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand">Fitness</a>
+                <a href="#" class="navbar-brand">{{ $settings->company_name }}</a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right main-navigation">
                     <li><a href="#home" class="smoothScroll">Home</a></li>
                     <li><a href="#overview" class="smoothScroll">About us</a></li>
                     <li><a href="#products" class="smoothScroll">Products</a></li>
-                    <li><a href="#blog" class="smoothScroll">Blog</a></li>
-                    <li><a href="#price" class="smoothScroll">Prices</a></li>
-                    <li><a href="#testimonial" class="smoothScroll">Testimonials</a></li>
+                    <li><a href="#newsletter" class="smoothScroll">Contact Us</a></li>
+                    {{-- <li><a href="#blog" class="smoothScroll">Blog</a></li> --}}
+                    {{-- <li><a href="#price" class="smoothScroll">Prices</a></li> --}}
+                    {{-- <li><a href="#testimonial" class="smoothScroll">Testimonials</a></li> --}}
                 </ul>
             </div>
 
@@ -75,10 +83,10 @@
             <div class="row">
 
                 <div class="col-md-offset-1 col-md-10 col-sm-12">
-                    <h3 class="wow bounceIn" data-wow-delay="0.9s">Hello! you are welcome to</h3>
-                    <h1 class="wow fadeInUp" data-wow-delay="1.6s">Professional<br>Fitness Club</h1>
-                    <a href="#overview" class="wow fadeInUp smoothScroll btn btn-default" data-wow-delay="2s">LEARN
-                        MORE</a>
+                    <h3 class="wow bounceIn" data-wow-delay="0.9s">{{ $settings->banner_heading_1 }}</h3>
+                    <h1 class="wow fadeInUp" data-wow-delay="1.6s">{{ $settings->banner_heading_2 }}</h1>
+                    <a href="#overview" class="wow fadeInUp smoothScroll btn btn-default"
+                        data-wow-delay="2s">{{ $settings->banner_button_text }}</a>
                 </div>
 
             </div>
@@ -94,9 +102,9 @@
             <div class="row">
 
                 <div class="col-md-6 col-sm-12">
-                    <img src="images/overview-img.jpg" class="img-responsive" alt="Overview">
-                    <blockquote class="wow fadeInUp" data-wow-delay="1.9s">Fitness is free website template that can be
-                        used for any company. You may download, modify and use this layout for your website.
+                    <img src="{{ asset('frontpage/images/' . $settings->about_us_image) }}" class="img-responsive"
+                        alt="Overview">
+                    <blockquote class="wow fadeInUp" data-wow-delay="1.9s">{{ $settings->about_us_description_2 }}
                     </blockquote>
                 </div>
 
@@ -104,12 +112,10 @@
 
                 <div class="wow fadeInUp col-md-4 col-sm-12" data-wow-delay="1s">
                     <div class="overview-detail">
-                        <h2>About Fitness</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                            tincidunt ut laoreet. Dolore magna aliquam erat.</p>
-                        <p>Fitness web template includes total 2 pages. This is an index (main) page and another is a <a
-                                href="blog-single.html">blog page</a>.</p>
-                        <a href="#products" class="btn btn-default smoothScroll">Let us begin</a>
+                        <h2>{{ $settings->about_us_heading }}</h2>
+                        <p>{{ $settings->about_us_description_1 }}</p>
+                        <a href="#products"
+                            class="btn btn-default smoothScroll">{{ $settings->about_us_button_text }}</a>
                     </div>
                 </div>
 
@@ -128,10 +134,10 @@
             <div class="row">
 
                 <div class="wow fadeInUp col-md-12 col-sm-12" data-wow-delay="1.3s">
-                    <h2>our Trainers</h2>
-                    <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo.</p>
+                    <h2>{{ $settings->products_heading }}</h2>
+                    <p>{{ $settings->products_description }}</p>
                 </div>
-
+                {{-- 
                 <div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="1.9s">
                     <div class="trainer-thumb">
                         <img src="images/trainer-img1.jpg" class="img-responsive" alt="Trainer">
@@ -140,8 +146,8 @@
                                 <h2>Jenny</h2>
                                 <h3>Body Trainer</h3>
                                 <ul class="social-icon">
-                                    <li><a href="#" class="fa fa-facebook wow fadeInUp"
-                                            data-wow-delay="1s"></a></li>
+                                    <li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="1s"></a>
+                                    </li>
                                     <li><a href="#" class="fa fa-twitter wow fadeInUp"
                                             data-wow-delay="1.3s"></a></li>
                                     <li><a href="#" class="fa fa-behance wow fadeInUp"
@@ -196,50 +202,16 @@
                     </div>
                     <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue
                         vulputate.</p>
-                </div>
+                </div> --}}
 
             </div>
         </div>
     </section>
-
-
-    <!-- =========================
-    NEWSLETTER SECTION
-============================== -->
-    <section id="newsletter" class="parallax-section">
-        <div class="container">
-            <div class="row">
-
-                <div class="wow fadeInUp col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10" data-wow-delay="0.9s">
-                    <h2>Signup Newsletter</h2>
-                    <p>Get discounts for your personal fitness and gym services now.</p>
-                    <div class="newsletter_detail">
-                        <form action="#" method="post" id="newsletter-signup">
-                            <div class="col-md-6 col-sm-6">
-                                <input name="name" type="text" class="form-control" id="name"
-                                    placeholder="Name">
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <input name="email" type="email" class="form-control" id="email"
-                                    placeholder="Email">
-                            </div>
-                            <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
-                                <input name="submit" type="submit" class="form-control" id="submit"
-                                    value="SEND MESSAGE">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
 
     <!-- =========================
     BLOG SECTION
 ============================== -->
-    <section id="blog" class="parallax-section">
+    {{-- <section id="blog" class="parallax-section">
         <div class="container">
             <div class="row">
 
@@ -282,13 +254,13 @@
 
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
     <!-- =========================
     PRICE SECTION
 ============================== -->
-    <section id="price" class="parallax-section">
+    {{-- <section id="price" class="parallax-section">
         <div class="container">
             <div class="row">
 
@@ -344,18 +316,16 @@
 
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
     <!-- =========================
     TESTIMONIAL SECTION
 ============================== -->
-    <section id="testimonial" class="parallax-section">
+    {{-- <section id="testimonial" class="parallax-section">
         <div class="container">
             <div class="row">
 
-                <!-- Testimonial Owl Carousel section
-   ================================================== -->
                 <div id="owl-testimonial" class="owl-carousel">
 
                     <div class="item col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 wow fadeInUp"
@@ -393,9 +363,37 @@
 
             </div>
         </div>
+    </section> --}}
+
+
+    <section id="newsletter" class="parallax-section">
+        <div class="container">
+            <div class="row">
+
+                <div class="wow fadeInUp col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10" data-wow-delay="0.9s">
+                    <h2>{{ $settings->contactus_heading }}</h2>
+                    <p>{{ $settings->contactus_description }}</p>
+                    <div class="newsletter_detail">
+                        <form action="#" method="post" id="newsletter-signup">
+                            <div class="col-md-6 col-sm-6">
+                                <input name="name" type="text" class="form-control" id="name"
+                                    placeholder="Name">
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <input name="email" type="email" class="form-control" id="email"
+                                    placeholder="Email">
+                            </div>
+                            <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+                                <input name="submit" type="submit" class="form-control" id="submit"
+                                    value="{{ $settings->contactus_button_text }}">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
-
-
     <!-- =========================
     FOOTER SECTION
 ============================== -->
@@ -404,41 +402,43 @@
             <div class="row">
 
                 <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="0.6s">
-                    <h2>About Fitness</h2>
-                    <p>Nunc id turpis tincidunt dui volutpat hendrerit et efficitur dolor. Morbi quis tempor felis, ut
-                        dictum ipsum. Praesent venenatis rutrum interdum.</p>
+                    <h2>{{ $settings->company_name }}</h2>
+                    {{-- <p>Nunc id turpis tincidunt dui volutpat hendrerit et efficitur dolor. Morbi quis tempor felis, ut
+                        dictum ipsum. Praesent venenatis rutrum interdum.</p> --}}
                 </div>
 
                 <div class="wow fadeInUp col-md-5 col-sm-4" data-wow-delay="0.9s">
-                    <h2>Sessions</h2>
+                    <h2>Office Timing</h2>
                     <div>
-                        <h5>Morning</h5>
-                        <h4>6:00 AM - 11:00 PM</h4>
+                        <h4>{{ $settings->office_time }}</h4>
                     </div>
+                    <h2>Address</h2>
                     <div>
-                        <h5>Evening</h5>
-                        <h4>4:00 PM - 9:00 PM</h4>
+                        <h4>{{ $settings->address }}</h4>
                     </div>
                 </div>
 
                 <div class="wow fadeInUp col-md-3 col-sm-4" data-wow-delay="1s">
                     <h2>Follow us</h2>
                     <ul class="social-icon">
-                        <li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="1s"></a></li>
-                        <li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s"></a></li>
-                        <li><a href="#" class="fa fa-dribbble wow fadeIn" data-wow-delay="1.6s"></a></li>
-                        <li><a href="#" class="fa fa-behance wow fadeInUp" data-wow-delay="1.9s"></a></li>
-                        <li><a href="#" class="fa fa-google-plus wow fadeIn" data-wow-delay="2s"></a></li>
+                        <li><a href="{{ $settings->social_facebook }}" class="fa fa-facebook wow fadeIn"
+                                data-wow-delay="1s"></a></li>
+                        <li><a href="{{ $settings->social_twitter }}" class="fa fa-twitter wow fadeInUp"
+                                data-wow-delay="1.3s"></a></li>
+                        <li><a href="{{ $settings->social_instagram }}" class="fa fa-instagram wow fadeIn"
+                                data-wow-delay="1.6s"></a></li>
+                        <li><a href="{{ $settings->social_whatsapp }}" class="fa fa-whatsapp wow fadeInUp"
+                                data-wow-delay="1.9s"></a></li>
+                        <li><a href="{{ $settings->social_phone }}" class="fa fa-phone wow fadeIn"
+                                data-wow-delay="2s"></a></li>
                     </ul>
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="col-md-12 col-sm-12">
-                    <p class="copyright-text">Copyright &copy; 2016 Your Company
-
-                        | Design: <a rel="nofollow" href="http://www.templatemo.com/page/1"
-                            target="_parent">Templatemo</a></p>
+                    <p class="copyright-text">Copyright &copy; {{ now()->format('Y') }} {{ $settings->company_name }}
+                    </p>
                 </div>
 
             </div>
@@ -457,6 +457,22 @@
     <script src="{{ asset('js/smoothscroll.js') }}"></script>
     <script src="{{ asset('js/wow.min.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
+    <script>
+        /* home slider section
+          -----------------------------------------------*/
+        $(function() {
+            jQuery(document).ready(function() {
+                $("#home").backstretch(
+                    [
+                        "frontpage/banner/1702944425_63061652a2f8b1661343314-1024x683.jpg",
+                    ], {
+                        duration: 2000,
+                        fade: 750
+                    }
+                );
+            });
+        });
+    </script>
 
 </body>
 

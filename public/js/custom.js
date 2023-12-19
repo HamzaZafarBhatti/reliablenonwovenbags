@@ -70,27 +70,14 @@ $(document).ready(function () {
     function initParallax() {
         $("#home").parallax("100%", 0.1);
         $("#overview").parallax("100%", 0.3);
-        $("#trainer").parallax("100%", 0.2);
+        $("#products").parallax("100%", 0.2);
         $("#newsletter").parallax("100%", 0.3);
-        $("#blog").parallax("100%", 0.1);
-        $("#price").parallax("100%", 0.2);
-        $("#testimonial").parallax("100%", 0.2);
+        // $("#blog").parallax("100%", 0.1);
+        // $("#price").parallax("100%", 0.2);
+        // $("#testimonial").parallax("100%", 0.2);
     }
     initParallax();
 
-    /* home slider section
-  -----------------------------------------------*/
-    $(function () {
-        jQuery(document).ready(function () {
-            $("#home").backstretch(
-                [
-                    "images/home-bg-slider-img1.jpg",
-                    "images/home-bg-slider-img2.jpg",
-                ],
-                { duration: 2000, fade: 750 }
-            );
-        });
-    });
 
     /* Owl Carousel
   -----------------------------------------------*/
